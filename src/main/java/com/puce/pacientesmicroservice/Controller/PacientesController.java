@@ -43,6 +43,9 @@ public class PacientesController {
         Paciente paciente = PacientesRepository.getReferenceById(Integer.valueOf(body.get("id")));
         paciente.setName(body.get("name"));
         paciente.setSurname(body.get("surname"));
+        paciente.setAddress(body.get("address"));
+        paciente.setPhone(body.get("phone"));
+        paciente.setEmail(body.get("email"));
         return PacientesRepository.save(paciente);
     }
 
