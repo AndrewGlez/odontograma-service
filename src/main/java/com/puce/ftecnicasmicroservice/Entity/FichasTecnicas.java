@@ -17,6 +17,9 @@ public class FichasTecnicas implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Double budget;
+    private Integer paciente_id;
     private String medication;
+    private String description;
+    private String tratamientos;
     private boolean is_paid;
 }

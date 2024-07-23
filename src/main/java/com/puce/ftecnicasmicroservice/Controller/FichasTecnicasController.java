@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/fichas")
+@CrossOrigin("*")
 public class FichasTecnicasController {
 
     @Autowired
@@ -42,6 +43,9 @@ public class FichasTecnicasController {
         FichasTecnicas fichasTecnica = FichasTecnicasRepository.getReferenceById(Integer.valueOf(body.get("id")));
         fichasTecnica.setMedication(body.get("medication"));
         fichasTecnica.setBudget(Double.valueOf(body.get("budget")));
+        fichasTecnica.setDescription(body.get("description"));
+        fichasTecnica.setTratamientos(body.get("tratamientos"));
+        fichasTecnica.setPaciente_id(Integer.valueOf(body.get("paciente_id")));
         fichasTecnica.set_paid(Boolean.parseBoolean(body.get("_paid")));
         FichasTecnicasRepository.save(fichasTecnica);
     }
