@@ -1,7 +1,6 @@
 package com.puce.odontogramaservice.Controller;
 
 import com.puce.odontogramaservice.Entity.Odontograma;
-import com.puce.odontogramaservice.Entity.OdontrogramaDTO;
 import com.puce.odontogramaservice.Repository.OdontogramaRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +10,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/odontograma")
+@CrossOrigin("*")
 public class OdontogramaController {
     @Autowired
     private OdontogramaRespository odontogramaRespository;
